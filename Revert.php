@@ -1,12 +1,11 @@
 <?php
-class Revert {
-public static function revertCharacters($str): void{
+function revertCharacters($str): string
+{
     $result = '';
-    for ($i = mb_strlen($str); $i>=0; $i--) {
+    for ($i = mb_strlen($str); $i >= 0; $i--) {
         $result .= mb_substr($str, $i, 1);
     }
-    echo $result;
+    return $result;
+}
 
-}
-}
-Revert::revertCharacters("Привет! Давно не виделись.");
+echo revertCharacters("Привет! Давно не виделись.");
